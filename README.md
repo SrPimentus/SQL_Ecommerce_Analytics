@@ -4,13 +4,15 @@
 
 > 🚀 Este projeto foi desenvolvido durante o módulo **"Explorando Bancos Relacionais e Consultas em SQL"** do **Bootcamp Klabin - Análise de Dados com Excel e Power BI Dashboards** da [Digital Innovation One (DIO)](https://www.dio.me/) em parceria com a empresa **Klabin**.  
 
----
+--- 
 
 ## 📌 Sobre o Projeto  
 
 O objetivo foi **replicar e refinar a modelagem de um banco de dados para um cenário de e-commerce**, contemplando desde a **definição de chaves e constraints**, até a criação do **script SQL** com inserção de dados de teste e queries mais complexas.  
 
 Durante o desafio, foram aplicados conceitos de **modelagem lógica, relacional e EER**, além da implementação de boas práticas de integridade e consistência de dados.  
+
+> ⚠️ Observação: todos os dados utilizados para abastecer o banco foram gerados de forma aleatória utilizando **inteligência artificial**, garantindo diversidade sem expor informações reais de clientes ou empresas.
 
 ---
 
@@ -114,6 +116,31 @@ O projeto inclui queries que respondem a hipóteses de negócio, como:
 
 ---
 
+## 🛠️ Instruções de Uso
+
+Para rodar o projeto na sua máquina, siga os passos abaixo:
+
+1. **Clonar o repositório**  
+```bash
+git clone https://github.com/LucasPBar/sql-ecommerce-analytics.git
+cd sql-ecommerce-analytics
+```
+2. Abrir o MySQL Workbench ou outro cliente SQL de sua preferência.
+
+3. Criar um novo schema com o nome desejado (ex: `ecommerce_db`).
+
+4. Executar os scripts SQL na seguinte ordem para garantir a criação correta do banco, inserção de dados e execução das queries de análise:
+
+  - `project_ecommerce_dio_database.sql` → Criação da infraestrutura do banco de dados (tabelas, chaves e relacionamentos).  
+  - `project_ecommerce_dio_data.sql` → Abastecimento do banco com dados de teste gerados por inteligência artificial.  
+  - `project_ecommerce_dio_analise.sql` → Queries para recuperar informações e testar hipóteses de negócio.
+
+5. Explorar os dados: abra o arquivo de queries (`project_ecommerce_dio_analise.sql`) para testar consultas ou criar análises adicionais conforme desejar.
+
+> ⚠️ Observação: Todos os dados utilizados foram gerados de forma aleatória com o uso de inteligência artificial, não correspondendo a informações reais de clientes ou empresas.
+**
+
+--- 
 ## 📬 Contato
 
 | | | |
