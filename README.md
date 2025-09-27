@@ -14,6 +14,36 @@ Durante o desafio, foram aplicados conceitos de **modelagem lógica, relacional 
 
 ---
 
+## 📚 Objetivo de Aprendizado  
+
+Este projeto me permitiu:  
+- Consolidar conceitos de **modelagem relacional** e **EER**.  
+- Praticar **criação de schemas SQL complexos**.  
+- Simular hipóteses de negócio reais através de consultas avançadas.  
+
+---
+
+## 📊 Consultas SQL  
+
+O projeto inclui queries que respondem a hipóteses de negócio, como:  
+
+- Quantos pedidos foram feitos por cliente?  
+- Existe algum vendedor que também é fornecedor?  
+- Qual a relação entre produtos e fornecedores?  
+- Como se distribuem os produtos segundo a **curva ABC** baseada em margem de lucro?  
+
+> Todas as queries estão comentadas no código para facilitar o entendimento.
+
+---
+
+## 🛠️ Tecnologias Utilizadas  
+
+- **<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" alt="MySQL Logo" width="35" style="vertical-align:middle; margin-right:5px;"> MySQL** para criação e gerenciamento do banco de dados.
+- **<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-original.svg" alt="Workbench Logo" width="30" style="vertical-align:middle; margin-right:5px;"> Workbench** para modelagem visual.
+- **<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="SQL Logo" width="30" style="vertical-align:middle; margin-right:5px;"> SQL** para consultas e manipulação de dados.
+
+---
+
 ## ✨ Refinamentos Aplicados  
 
 ### 🔹 Clientes (Clients)  
@@ -50,43 +80,6 @@ Durante o desafio, foram aplicados conceitos de **modelagem lógica, relacional 
 - Correção em `storageLocation` e outras entidades.  
 
 ---
-## 🔍 Hipóteses e Análises do Projeto
-
-| Análise | Hipótese | Descrição / Objetivo | Tabela / Colunas principais |
-|---------|----------|-------------------|----------------------------|
-| Clientes cadastrados | - | Identificar quem são os clientes e como contatá-los | clients (Fname, Lname, Email) |
-| Produtos infantis disponíveis | Produtos infantis podem ter maior rotatividade em datas comemorativas | Verificar quais produtos atendem ao público infantil | product (Pname, classification_kids) |
-| Entregas cadastradas com rastreamento | Acompanhamento do status pode reduzir o número de reclamações de clientes | Obter status de entrega e código de rastreamento | delivery (trackingCode, deliveryStatus) |
-| Quantidade de pedidos por cliente | - | Identificar clientes mais ativos | clients, orders (idClient, Fname, Lname, idOrder) |
-| Algum vendedor também é fornecedor | - | Verificar se há sobreposição de funções | seller, supplier (CNPJ, SocialName) |
-| Produtos, fornecedores e estoques | - | Relacionar produtos aos fornecedores e quantidades fornecidas | supplier, productSupplier, product (SocialName, Pname, quantity) |
-| Produtos com categorias e preços | Categorias com preços mais altos podem gerar maior margem de lucro | Observar faixa de preço por categoria de produto | product (Pname, category, unitPrice) |
-| Produtos com maior margem de lucro | Alguns produtos são mais rentáveis mesmo com menor volume | Identificar produtos mais lucrativos | product (Pname, unitPrice, profitMargin) |
-| Volume de compra: PJ x PF | Clientes PJ compram em maior quantidade que PF | Comparar quantidade total de itens comprados por tipo de cliente | orders, productOrder, client_pj, client_pf |
-| Top 5 produtos mais vendidos | Poucos produtos concentram a maior parte das vendas | Obter ranking dos produtos mais vendidos | productOrder, product (Pname, poQuantity) |
-| Receita total por cliente | Existe concentração de receita em poucos clientes | Calcular receita total gerada por cada cliente | clients, orders, productOrder, product |
-| Categoria que mais gera receita | Algumas categorias concentram maior valor de receita | Identificar categorias mais lucrativas | productOrder, product, orders |
-| Ranking de vendedores por quantidade vendida | Pequeno número de vendedores concentra a maior parte das vendas | Listar vendedores com maiores vendas em volume | productOrder, product, productSeller, seller |
-| Pedidos cancelados por tipo de cliente | Clientes PJ podem ter maior índice de cancelamento | Comparar número de pedidos cancelados entre PJ e PF | orders, client_pj, client_pf |
-| Fornecedores que mais contribuem para estoque | Poucos fornecedores concentram a maior parte do fornecimento | Identificar fornecedores que mais fornecem produtos | productSupplier, supplier |
-| Tempo médio de entrega | Tempo médio de entrega pode ser usado para SLA com clientes | Calcular média de dias para pedidos entregues | delivery, orders |
-| Classificação ABC de produtos | Poucos produtos (classe A) geram a maior parte do lucro | Categorizar produtos com base no lucro acumulado | productOrder, product, orders |
-| Clientes com receita acima de R$2.000 | - | Identificar clientes que geram maior receita | clients, orders, productOrder, product |
-
----
-
-## 📊 Consultas SQL  
-
-O projeto inclui queries que respondem a hipóteses de negócio, como:  
-
-- Quantos pedidos foram feitos por cliente?  
-- Existe algum vendedor que também é fornecedor?  
-- Qual a relação entre produtos e fornecedores?  
-- Como se distribuem os produtos segundo a **curva ABC** baseada em margem de lucro?  
-
-> Todas as queries estão comentadas no código para facilitar o entendimento.  
-
----
 
 ## 📐 Diagramas do Projeto  
 
@@ -95,20 +88,29 @@ O projeto inclui queries que respondem a hipóteses de negócio, como:
 
 ---
 
-## 🛠️ Tecnologias Utilizadas  
+## 🔍 Hipóteses e Análises do Projeto
 
-- **<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" alt="MySQL Logo" width="35" style="vertical-align:middle; margin-right:5px;"> MySQL** para criação e gerenciamento do banco de dados.
-- **<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-original.svg" alt="Workbench Logo" width="30" style="vertical-align:middle; margin-right:5px;"> Workbench** para modelagem visual.
-- **<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="SQL Logo" width="30" style="vertical-align:middle; margin-right:5px;"> SQL** para consultas e manipulação de dados.
 
----
-
-## 📚 Objetivo de Aprendizado  
-
-Este projeto me permitiu:  
-- Consolidar conceitos de **modelagem relacional** e **EER**.  
-- Praticar **criação de schemas SQL complexos**.  
-- Simular hipóteses de negócio reais através de consultas avançadas.  
+| Análise | Hipótese | Descrição / Objetivo | Conclusão |
+|---------|----------|-------------------|------------|
+| Clientes cadastrados | - | Identificar quem são os clientes e como contatá-los | Foi possível listar todos os 10 clientes com seus emails para contato. |
+| Produtos infantis disponíveis | - | Verificar quais produtos atendem ao público infantil | 2 produtos classificados como infantis: Boneco Avengers e Chocolate Nestlé. |
+| Entregas cadastradas com rastreamento | Acompanhamento do status pode reduzir o número de reclamações | Monitorar status das entregas | Hipótese plausível: é possível acompanhar todas as entregas, mas não há dados de reclamações para confirmar efeito. |
+| Quantidade de pedidos por cliente | - | Identificar clientes mais ativos | Clientes com maior número de pedidos: João e Ana. |
+| Algum vendedor também é fornecedor | - | Verificar se há sobreposição de funções | Nenhum vendedor também é fornecedor. |
+| Produtos, fornecedores e estoques | - | Relacionar produtos aos fornecedores e quantidades fornecidas | 'Fornecedor Alimentos' fornece a maior quantidade. |
+| Produtos com categorias e preços | Categorias com preços mais altos podem gerar maior margem de lucro | Observar faixa de preço por categoria | Verdadeiro: produtos mais caros tendem a gerar maior margem de lucro. |
+| Produtos com maior margem de lucro | Alguns produtos são mais rentáveis mesmo com menor volume | Identificar produtos mais lucrativos | Verdadeiro: alguns produtos têm margem significativamente maior, independente do volume. |
+| Volume de compra: PJ x PF | Clientes PJ compram em maior quantidade que PF | Comparar quantidade de itens comprados por tipo de cliente | Falso: PF comprou mais itens que PJ neste dataset. |
+| Top 5 produtos mais vendidos | Poucos produtos concentram a maior parte das vendas | Identificar produtos mais vendidos | Verdadeiro: poucos produtos concentram a maior parte das vendas. |
+| Receita total por cliente | Existe concentração de receita em poucos clientes | Calcular receita total por cliente | Verdadeiro: poucos clientes concentram a maior parte da receita. |
+| Categoria que mais gera receita | Algumas categorias concentram maior valor de receita | Identificar categorias mais lucrativas | Verdadeiro: uma categoria específica gera maior receita que as demais. |
+| Ranking de vendedores por quantidade vendida | Pequeno número de vendedores concentra a maior parte das vendas | Listar vendedores mais ativos | Verdadeiro: vendas concentradas em poucos vendedores. |
+| Pedidos cancelados por tipo de cliente | Clientes PJ podem ter maior índice de cancelamento | Comparar pedidos cancelados por tipo | Falso: neste dataset, apenas PF teve pedido cancelado. |
+| Fornecedores que mais contribuem para estoque | Poucos fornecedores concentram a maior parte do fornecimento | Identificar principais fornecedores | Verdadeiro: um fornecedor concentra a maior parte do estoque fornecido. |
+| Tempo médio de entrega | - | Calcular média de dias para pedidos entregues | Tempo médio de entrega pode ser calculado e utilizado como referência. |
+| Classificação ABC de produtos | Poucos produtos (classe A) geram a maior parte do lucro | Categorizar produtos por contribuição ao lucro | Verdadeiro: poucos produtos geram a maior parte do lucro total. |
+| Clientes com receita acima de R$2.000 | - | Identificar clientes que geram maior receita | Clientes com maior receita: João, Ana e Lucas. |
 
 ---
 
