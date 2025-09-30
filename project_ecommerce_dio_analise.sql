@@ -223,7 +223,7 @@ select
     end as classificacao
 from acumulado a;
 
--- Clientes com receita superior a R$ 5.000 em pedidos confirmados
+-- Clientes com receita superior a R$ 2.000 em pedidos confirmados
 SELECT 
     c.Fname AS nome,
     c.Lname AS sobrenome,
